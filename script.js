@@ -25,7 +25,7 @@ var botonDesencriptar = document.querySelector("#btn-desencriptar");
 var mensajeEncriptado = document.querySelector("#msg");
 var botonCopiar = document.querySelector("#btn-copy");
 
-var regexp = /[A-Z]/;
+var regexp = /[A-Z,áíóúé]/;
 
 function tomarFrase(evento) {
     evento.preventDefault();
