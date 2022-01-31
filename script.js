@@ -25,12 +25,17 @@ var botonDesencriptar = document.querySelector("#btn-desencriptar");
 var mensajeEncriptado = document.querySelector("#msg");
 var botonCopiar = document.querySelector("#btn-copy");
 
+var regexp = /[A-Z]/;
+
 function tomarFrase(evento) {
     evento.preventDefault();
     botonEncriptar.textContent = inputFrase.value;
-    inputFrase.value ="";
-    
-    return botonEncriptar.textContent
+    if (botonEncriptar.textContent.match(regexp)) {
+        alert("Escribir en letras minusculas y sin acento!!!");
+    } else {
+        inputFrase.value ="";
+        return botonEncriptar.textContent
+    };
 }
 
 function encriptarFrase (frase) {
